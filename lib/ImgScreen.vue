@@ -5,7 +5,7 @@
     prettier settings since I'm using prettier-eslint
    -->
   <transition appear name="v-img-fade">
-    <div v-if="!closed" class="fullscreen-v-img" @click.self="close">
+    <div v-if="!closed" class="fullscreen-v-img">
       <!--
         Count of total images in array and current position.
         We're showing wrapper element of this counter just to
@@ -142,9 +142,6 @@ export default {
       if (e.keyCode === 39 || e.keyCode === 76) this.next();
       // arrow left and 'h' key (vim-like binding)
       if (e.keyCode === 37 || e.keyCode === 72) this.prev();
-    });
-    window.addEventListener("scroll", () => {
-      this.close();
     });
     window.addEventListener("mousemove", () => {
       this.showUI();
